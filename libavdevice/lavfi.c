@@ -378,7 +378,7 @@ static int create_subcc_packet(AVFormatContext *avctx, AVFrame *frame,
         return ret;
     memcpy(lavfi->subcc_packet.data, sd->data, sd->size);
     
-    pts = av_rescale_q(frame->pts, lavfi->video_time_base, (AVRational){1, 90000}):
+    pts = av_rescale_q(frame->pts, lavfi->video_time_base, (AVRational){1, 90000});
     lavfi->subcc_packet.stream_index = stream_idx;
     lavfi->subcc_packet.pts = (int64_t)pts;
     lavfi->subcc_packet.pos = av_frame_get_pkt_pos(frame);
